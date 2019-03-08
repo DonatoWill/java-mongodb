@@ -2,7 +2,7 @@ package challenge;
 
 import java.util.List;
 
-public interface RecipeService {
+public interface RecipeService{
 
 	Recipe save(Recipe recipe);
 
