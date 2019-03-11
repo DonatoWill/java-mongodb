@@ -23,6 +23,24 @@ public class Recipe {
 
     public Recipe(){};
 
+
+
+
+    public void addLike(String id){ this.likes.add(id);}
+
+    public void removeLike(String id){ this.likes.remove(likes.indexOf(id));}
+
+    public void addComments(RecipeComment comment){ this.comments.add(comment);}
+
+    public void updateComments(RecipeComment comment){
+
+        this.comments.get(comments.indexOf(comment)).setComment(comment.getComment());
+    }
+
+    public void removeComments(RecipeComment comment){
+        this.comments.remove(comments.indexOf(comment));
+    }
+
     public String getId() {
         return id;
     }

@@ -35,7 +35,12 @@ public class RecipeValidationTest {
 
 	@Test
 	public void save() {
-		ResponseEntity<Void> response = restTemplate.exchange("/recipe", HttpMethod.POST, new HttpEntity<>("{}", httpHeaders), Void.class);
+		ResponseEntity<Void> response = restTemplate.exchange("/recipe", HttpMethod.POST, new HttpEntity<>("{\"title\": \"Bolo de chocolate\",\n" +
+				"  \"description\": \"Bolo de chocolate caseiro\",\n" +
+				"  \"ingredients\": [\n" +
+				"    \"ovo\",\n" +
+				"    \"chocolate\"\n" +
+				"  ]}", httpHeaders), Void.class);
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 	}
 

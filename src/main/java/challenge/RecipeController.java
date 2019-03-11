@@ -18,7 +18,7 @@ public class RecipeController {
 	}
 
 	@PutMapping("/{id}")
-	public void update(@PathVariable("id") String id, Recipe recipe) {
+	public void update(@PathVariable("id") String id, @RequestBody Recipe recipe) {
 		service.update(id, recipe);
 	}
 
